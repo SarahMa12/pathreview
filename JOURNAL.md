@@ -55,14 +55,9 @@ I chose this issue because it is small, well-defined, and only involves updating
 
 ## Week 8 — Reproduction & solution planning
 
-**Reproduction commit link:** 
+**Reproduction commit link:** https://github.com/SarahMa12/pathreview/commit/7762bc7bbaee1e4376746b28e08b5485b1b90c85
 
 **Reproduction summary:**
 Ran `.venv/bin/pytest tests/unit/test_readme_scorer.py -v -k test_readme_with_all_quality_signals` locally and confirmed the test fails every time: the inline fixture README is only 51 words, so `assert data["word_count"] > 100` fails immediately  before the test even reaches the `word_count_category == "comprehensive"` check. Scorer output (`category=minimal score=0.87 word_count=51`) confirms the scoring logic itself is working correctly.
 
-**PLAN.md link:** [link to PLAN.md in your fork]
-
-**Walkthrough video (recommended):** [link to your Loom video, ≤2 min — recommended, not graded]
-
-**Blockers or open questions:**
-[Anything you're still uncertain about going into Week 9, or leave blank]
+**PLAN.md link:** https://github.com/SarahMa12/pathreview/blob/test/156-extend-readme-fixture-word-count/PLAN.md
