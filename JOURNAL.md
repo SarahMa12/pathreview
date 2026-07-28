@@ -52,3 +52,17 @@
 ### Selection Notes — Scope Reasoning
 
 I chose this issue because it is small, well-defined, and only involves updating a test fixture instead of modifying the actual scoring logic since this is my first time. The main thing to watch out for is making sure the README reaches the correct 500-word threshold, since adding just enough words to get over 100 would still cause the test to fail.
+
+## Week 8 — Reproduction & solution planning
+
+**Reproduction commit link:** 
+
+**Reproduction summary:**
+Ran `.venv/bin/pytest tests/unit/test_readme_scorer.py -v -k test_readme_with_all_quality_signals` locally and confirmed the test fails every time: the inline fixture README is only 51 words, so `assert data["word_count"] > 100` fails immediately  before the test even reaches the `word_count_category == "comprehensive"` check. Scorer output (`category=minimal score=0.87 word_count=51`) confirms the scoring logic itself is working correctly.
+
+**PLAN.md link:** [link to PLAN.md in your fork]
+
+**Walkthrough video (recommended):** [link to your Loom video, ≤2 min — recommended, not graded]
+
+**Blockers or open questions:**
+[Anything you're still uncertain about going into Week 9, or leave blank]
