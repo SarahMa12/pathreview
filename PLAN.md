@@ -12,10 +12,10 @@
 ### Plan
 1. Add more realistic content to the README fixture so it is over 500 words.
 2. Keep all the existing sections that the test checks, including:
-    -  ## Installation with a code block
-    - ## Usage with a code block
+    - Installation with a code block
+    - Usage with a code block
     - badges (![...](...))
-    - ## Tech Stack
+    - Tech Stack
     - a demo link ([Try it here](...))
 3. Run `.venv/bin/pytest tests/unit/test_readme_scorer.py -v -k test_readme_with_all_quality_signals` to make sure that test passes.
 4. Run the full `tests/unit/test_readme_scorer.py` file to make sure the other README scorer tests still pass.
