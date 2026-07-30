@@ -61,3 +61,16 @@ I chose this issue because it is small, well-defined, and only involves updating
 Ran `.venv/bin/pytest tests/unit/test_readme_scorer.py -v -k test_readme_with_all_quality_signals` locally and confirmed the test fails every time: the inline fixture README is only 51 words, so `assert data["word_count"] > 100` fails immediately  before the test even reaches the `word_count_category == "comprehensive"` check. Scorer output (`category=minimal score=0.87 word_count=51`) confirms the scoring logic itself is working correctly.
 
 **PLAN.md link:** https://github.com/SarahMa12/pathreview/blob/test/156-extend-readme-fixture-word-count/PLAN.md
+
+## Week 9 — Solution building & PR submission
+
+### Check-in 1 (mid-week)
+
+**Current progress:**
+I completed the fix in `PLAN.md` by expanding the README test fixture in `tests/unit/test_readme_scorer.py` from about 50 words to over 500 words. I kept all the existing quality signals, including the installation and usage code blocks, badges, demo link, and tech stack, while adding more realistic content. I ran `tests/unit/test_readme_scorer.py`, and all 23 tests now pass. The previously failing test now reports a `"comprehensive"` word count category with a score of over 0.99.
+
+**Next steps:**
+Add tests for the exact word count boundaries (0, 1, 99, 100, 499, 500, 501, and 1000 words) to make sure the scorer correctly classifies README files as `"minimal"`, `"adequate"`, or `"comprehensive"` at each cutoff. After that, open the PR with the reproduction and plan links from Weeks 7–8 and include this fix.
+
+**Blockers:**
+None.
