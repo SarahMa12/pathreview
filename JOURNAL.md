@@ -74,3 +74,22 @@ Add tests for the exact word count boundaries (0, 1, 99, 100, 499, 500, 501, and
 
 **Blockers:**
 None.
+
+---
+
+### Check-in 2 (end of week)
+
+**PR link:** https://github.com/ascherj/pathreview/pull/832
+
+**Branch:** `test/156-extend-readme-fixture-word-count`
+
+**What you built:**
+The test `test_readme_with_all_quality_signals` expected the README fixture to be over 100 words and classified as `"comprehensive"`, but the fixture was only about 50 words, so the test failed even though the scoring logic was correct. I expanded the fixture to over 500 words so it meets the scorer's "comprehensive" threshold while still including all the quality signals the test checks (installation, usage, badges, demo link, and tech stack). No production code was changed.
+
+**Tests added or updated:**
+Updated only `tests/unit/test_readme_scorer.py` by expanding the README fixture from about 50 words to over 500 words. I didn't have time to add the planned boundary tests (0, 1, 99, 100, 499, 500, 501, and 1000 words), so that can be done in a future PR.
+
+**Self-review confirmation:** [ ] make check passes  [ ] make test-unit passes
+These aren't fully passing on this branch because there are existing unrelated issues (`make lint`, `make typecheck`, and `make test-unit`). However, `tests/unit/test_readme_scorer.py` passes all 23 tests.
+
+**Draft PR feedback received from:** None
