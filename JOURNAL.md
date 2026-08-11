@@ -93,3 +93,34 @@ Updated only `tests/unit/test_readme_scorer.py` by expanding the README fixture 
 These aren't fully passing on this branch because there are existing unrelated issues (`make lint`, `make typecheck`, and `make test-unit`). However, `tests/unit/test_readme_scorer.py` passes all 23 tests.
 
 **Draft PR feedback received from:** None
+
+## Week 10 — Iteration & reflection
+
+### Reviewer feedback
+
+**Feedback received:** [ ] Yes  [x] No — still awaiting review
+
+**Summary of feedback:**
+n/a
+
+**How you responded:**
+n/a
+
+---
+
+### Reflection
+
+**What was harder than you expected?**
+Even though the fix was small and only changed one file, understanding the codebase took longer than I expected. There were a lot of folders and files, so it wasn't clear which ones mattered. I started with the failing test, followed it to the scoring code, and made sure nothing else depended on the same logic before making any changes.
+
+**What did you learn about working in a large codebase?**
+I learned that it's better to start with the failing test instead of trying to understand the whole project. Following the error message and searching for specific code helped me find the right files much faster. Running the test first also showed me that the scoring code was correct and the test data was the real problem. Reading the rest of the test file helped me understand the pattern and avoid breaking other tests.
+
+**How did AI tools help — and where did they fall short?**
+AI helped me find the right files and explain how the scoring worked, which saved a lot of time. It also helped me write the longer README fixture once I knew what was needed. However, I still had to decide whether the issue was really just a test problem, make sure the new fixture made sense, and run the tests myself to confirm everything worked.
+
+**What would you do differently if you started over?**
+I would spend less time trying to understand the entire codebase and instead focus on the failing test right away. I would also add the boundary-value tests during the same PR instead of leaving them for later.
+
+**What are you most proud of from this module?**
+I'm most proud of completing my first "real" pull request in someone else's production codebase. I found the real cause of the problem, kept the fix small and focused, and successfully fixed the issue without changing the production code.
